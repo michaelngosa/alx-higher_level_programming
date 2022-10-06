@@ -1,35 +1,26 @@
 #!/usr/bin/python3
-""" Defines unittest for Base class """
+"""Unittests for base
+"""
 
-from models.base import Base
 import unittest
-from models.rectangle import Rectangle
-from models.square import Square
+from models.base import Base
 
 
-class Test_base_instantiation(unittest.TestCase):
-    def test_no_args(self):
-        b1 = Base()
-        b2 = Base()
-        self.assertEqual(b1.id, b2.id -1)
+class TestBase(unittest.TestCase):
+    """Define unit test for Base model"""
 
-    def test_none_id(self):
-        b1 = Base(None)
-        b2 = Base(None)
-        self.assertEqual(b1.id, b2.id -1)
+    def test_initialization(self):
+        base1 = Base()
+        base2 = Base()
+        self.assertEqual(base1.id, 1)
+        self.assertEqual(base2.id, 2)
 
-    def test_unique_id(self):
-        self.assertEqual(12, Base(12).id)
+    def test_saving_id(self):
+        base = Base(100)
+        self.assertEqual(base.id, 100)
 
-    def test_string_id(self):
-        self.assertEqual("hello", Base("hello").id)
+    def test_to_json_string_valid(self):
+        pass
 
-    def test_dict_id(self):
-        self.assertEqual({"a":1, "b":2}, Base({"a":1, "b":2}).id)
-
-    def test_list_id(self):
-        self.asserEqual([1,2,3], Base([1,2,3]).id)
-
-    def test_two_arg(self):
-        with self.assertRaises(TypeError):
-            Base(1,3)
+if __name__ == '__main__':
+    unittest.main()
