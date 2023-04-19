@@ -1,1 +1,0 @@
-object_relational_mapping
