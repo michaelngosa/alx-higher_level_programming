@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/pthyon3
 """
 list all State objects that contain the letter a from a database
 """

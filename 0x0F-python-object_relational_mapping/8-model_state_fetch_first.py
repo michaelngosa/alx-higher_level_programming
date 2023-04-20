@@ -1,4 +1,4 @@
-#1/usr/bin/python3
+#!/usr/bin/python3
 """
 This script prints the first State object
 from the database `hbtn_0e_6_usa`.
